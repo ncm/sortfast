@@ -111,7 +111,7 @@ inline bool swap_if(bool c, int& a, int& b) {
 
 inline bool swap_if(bool c, int& a, int& b) {
   int v[2] = { a, b };
-  b = v[!c], a = v[c];
+  a = v[c], b = v[!c];
   return c;
 }
 

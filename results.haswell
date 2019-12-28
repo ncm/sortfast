@@ -1,0 +1,136 @@
+make CC=g++-9
+g++-9 -DNOCHECK -O3 -march=native -DSTD sorts.cc && time ./a.out && echo ok
+
+real	0m10.499s
+user	0m10.241s
+sys	0m0.134s
+ok
+g++-9 -DNOCHECK -O3 -march=native -DRADIX256 sorts.cc && time ./a.out && echo ok
+
+real	0m1.646s
+user	0m1.349s
+sys	0m0.292s
+ok
+g++-9 -DNOCHECK -O3 -march=native -DRADIX2 sorts.cc && time ./a.out && echo ok
+
+real	0m7.398s
+user	0m6.662s
+sys	0m0.620s
+ok
+g++-9 -DNOCHECK -O3 -march=native -DBOG sorts.cc && time ./a.out && echo ok
+
+real	0m11.968s
+user	0m11.493s
+sys	0m0.191s
+ok
+g++-9 -DNOCHECK -O3 -march=native -DANDANDOR sorts.cc && time ./a.out && echo ok
+
+real	0m8.423s
+user	0m8.143s
+sys	0m0.144s
+ok
+g++-9 -DNOCHECK -O3 -march=native -DINDEXED sorts.cc && time ./a.out && echo ok
+
+real	0m6.751s
+user	0m6.494s
+sys	0m0.137s
+ok
+g++-9 -DNOCHECK -O3 -march=native -DROT sorts.cc && time ./a.out && echo ok
+
+real	0m7.442s
+user	0m7.257s
+sys	0m0.132s
+ok
+g++-9 -DNOCHECK -O3 -march=native -DCMOV sorts.cc && time ./a.out && echo ok
+
+real	0m11.590s
+user	0m11.283s
+sys	0m0.137s
+ok
+g++-9 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_HASWELL sorts.cc && time ./a.out && echo ok
+
+real	0m12.213s
+user	0m11.974s
+sys	0m0.139s
+ok
+g++-9 -DNOCHECK -O3 -march=native -DINDEXED_ALT1 sorts.cc && time ./a.out && echo ok
+
+real	0m23.180s
+user	0m22.597s
+sys	0m0.152s
+ok
+g++-9 -DNOCHECK -O3 -march=native -DINDEXED_ALT2 sorts.cc && time ./a.out && echo ok
+
+real	0m19.753s
+user	0m19.338s
+sys	0m0.139s
+ok
+
+
+make CC=clang++-8
+clang++-8 -DNOCHECK -O3 -march=native -DSTD sorts.cc && time ./a.out && echo ok
+
+real	0m10.371s
+user	0m10.016s
+sys	0m0.148s
+ok
+clang++-8 -DNOCHECK -O3 -march=native -DRADIX256 sorts.cc && time ./a.out && echo ok
+
+real	0m1.528s
+user	0m1.208s
+sys	0m0.289s
+ok
+clang++-8 -DNOCHECK -O3 -march=native -DRADIX2 sorts.cc && time ./a.out && echo ok
+
+real	0m7.861s
+user	0m7.067s
+sys	0m0.686s
+ok
+clang++-8 -DNOCHECK -O3 -march=native -DBOG sorts.cc && time ./a.out && echo ok
+
+real	0m11.628s
+user	0m11.334s
+sys	0m0.143s
+ok
+clang++-8 -DNOCHECK -O3 -march=native -DANDANDOR sorts.cc && time ./a.out && echo ok
+
+real	0m5.127s
+user	0m4.873s
+sys	0m0.135s
+ok
+clang++-8 -DNOCHECK -O3 -march=native -DINDEXED sorts.cc && time ./a.out && echo ok
+
+real	0m6.829s
+user	0m6.589s
+sys	0m0.139s
+ok
+clang++-8 -DNOCHECK -O3 -march=native -DROT sorts.cc && time ./a.out && echo ok
+
+real	0m6.978s
+user	0m6.775s
+sys	0m0.135s
+ok
+clang++-8 -DNOCHECK -O3 -march=native -DCMOV sorts.cc && time ./a.out && echo ok
+
+real	0m4.997s
+user	0m4.857s
+sys	0m0.136s
+ok
+clang++-8 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_HASWELL sorts.cc && time ./a.out && echo ok
+
+real	0m6.604s
+user	0m6.367s
+sys	0m0.140s
+ok
+clang++-8 -DNOCHECK -O3 -march=native -DINDEXED_ALT1 sorts.cc && time ./a.out && echo ok
+
+real	0m6.329s
+user	0m6.115s
+sys	0m0.138s
+ok
+clang++-8 -DNOCHECK -O3 -march=native -DINDEXED_ALT2 sorts.cc && time ./a.out && echo ok
+
+real	0m7.195s
+user	0m6.902s
+sys	0m0.135s
+ok
