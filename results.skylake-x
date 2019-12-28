@@ -104,7 +104,7 @@ real	0m4.696s
 user	0m4.580s
 sys	0m0.116s
 ok
-clang++-9 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_HASWELL sorts.cc && time ./a.out && echo ok
+clang++-9 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_GCC sorts.cc && time ./a.out && echo ok
 
 real	0m4.506s
 user	0m4.406s
