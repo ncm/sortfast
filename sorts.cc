@@ -88,6 +88,14 @@ inline bool swap_if(bool c, int& a, int& b) {
   return c;
 }
 
+#elif defined(INDEXED_PESSIMAL_ON_GCC)
+
+inline bool swap_if(bool c, int& a, int& b) {
+  int v[2] = { a, b };
+  a = v[c], b = v[!c];
+  return c;
+}
+
 #elif defined(ROT)
 
 inline bool swap_if(bool c, int& a, int& b) {
@@ -104,14 +112,6 @@ inline bool swap_if(bool c, int& a, int& b) {
   int ta = a, tb = b;
   a = c ? tb : ta;
   b = c ? ta : tb;
-  return c;
-}
-
-#elif defined(INDEXED_PESSIMAL_ON_HASWELL)
-
-inline bool swap_if(bool c, int& a, int& b) {
-  int v[2] = { a, b };
-  a = v[c], b = v[!c];
   return c;
 }
 

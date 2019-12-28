@@ -35,6 +35,12 @@ real	0m4.576s
 user	0m4.459s
 sys	0m0.116s
 ok
+g++-9 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_GCC sorts.cc && time ./a.out && echo ok
+
+real	0m8.472s
+user	0m8.352s
+sys	0m0.120s
+ok
 g++-9 -DNOCHECK -O3 -march=native -DROT sorts.cc && time ./a.out && echo ok
 
 real	0m5.239s
@@ -45,12 +51,6 @@ g++-9 -DNOCHECK -O3 -march=native -DCMOV sorts.cc && time ./a.out && echo ok
 
 real	0m8.171s
 user	0m8.051s
-sys	0m0.120s
-ok
-g++-9 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_HASWELL sorts.cc && time ./a.out && echo ok
-
-real	0m8.472s
-user	0m8.352s
 sys	0m0.120s
 ok
 g++-9 -DNOCHECK -O3 -march=native -DINDEXED_ALT1 sorts.cc && time ./a.out && echo ok

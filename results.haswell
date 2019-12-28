@@ -35,6 +35,12 @@ real	0m6.751s
 user	0m6.494s
 sys	0m0.137s
 ok
+g++-9 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_GCC sorts.cc && time ./a.out && echo ok
+
+real	0m12.213s
+user	0m11.974s
+sys	0m0.139s
+ok
 g++-9 -DNOCHECK -O3 -march=native -DROT sorts.cc && time ./a.out && echo ok
 
 real	0m7.442s
@@ -46,12 +52,6 @@ g++-9 -DNOCHECK -O3 -march=native -DCMOV sorts.cc && time ./a.out && echo ok
 real	0m11.590s
 user	0m11.283s
 sys	0m0.137s
-ok
-g++-9 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_HASWELL sorts.cc && time ./a.out && echo ok
-
-real	0m12.213s
-user	0m11.974s
-sys	0m0.139s
 ok
 g++-9 -DNOCHECK -O3 -march=native -DINDEXED_ALT1 sorts.cc && time ./a.out && echo ok
 
@@ -104,6 +104,12 @@ real	0m6.829s
 user	0m6.589s
 sys	0m0.139s
 ok
+clang++-8 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_GCC sorts.cc && time ./a.out && echo ok
+
+real	0m6.604s
+user	0m6.367s
+sys	0m0.140s
+ok
 clang++-8 -DNOCHECK -O3 -march=native -DROT sorts.cc && time ./a.out && echo ok
 
 real	0m6.978s
@@ -115,12 +121,6 @@ clang++-8 -DNOCHECK -O3 -march=native -DCMOV sorts.cc && time ./a.out && echo ok
 real	0m4.997s
 user	0m4.857s
 sys	0m0.136s
-ok
-clang++-8 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_HASWELL sorts.cc && time ./a.out && echo ok
-
-real	0m6.604s
-user	0m6.367s
-sys	0m0.140s
 ok
 clang++-8 -DNOCHECK -O3 -march=native -DINDEXED_ALT1 sorts.cc && time ./a.out && echo ok
 
