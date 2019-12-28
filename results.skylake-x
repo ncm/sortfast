@@ -49,9 +49,9 @@ sys	0m0.120s
 ok
 g++-9 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_HASWELL sorts.cc && time ./a.out && echo ok
 
-real	0m6.166s
-user	0m6.055s
-sys	0m0.112s
+real	0m8.472s
+user	0m8.352s
+sys	0m0.120s
 ok
 g++-9 -DNOCHECK -O3 -march=native -DINDEXED_ALT1 sorts.cc && time ./a.out && echo ok
 
@@ -118,9 +118,9 @@ sys	0m0.104s
 ok
 clang++-9 -DNOCHECK -O3 -march=native -DINDEXED_PESSIMAL_ON_HASWELL sorts.cc && time ./a.out && echo ok
 
-real	0m4.689s
-user	0m4.577s
-sys	0m0.112s
+real	0m4.506s
+user	0m4.406s
+sys	0m0.100s
 ok
 clang++-9 -DNOCHECK -O3 -march=native -DINDEXED_ALT1 sorts.cc && time ./a.out && echo ok
 
