@@ -117,7 +117,7 @@ inline bool swap_if(bool c, int& a, int& b) {
 
 #elif defined(INDEXED_ALT1)
 
-inline bool swap_if(bool c, int** sides) {
+inline bool swap_if(bool c, int* (&sides)[2]) {
   int a = *sides[c], b = *sides[1-c];
   *sides[0] = a, *sides[1] = b;
   return c;
@@ -125,7 +125,7 @@ inline bool swap_if(bool c, int** sides) {
 
 #elif defined(INDEXED_ALT2)
 
-inline bool swap_if(bool c, int** sides) {
+inline bool swap_if(bool c, int* (&sides)[2]) {
   int a = *sides[0], b = *sides[1];
   *sides[c] = a, *sides[1-c] = b;
   return c;
