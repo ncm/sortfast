@@ -139,16 +139,28 @@ inline bool swap_if(bool c, int* (&sides)[2]) {
 
 int* partition(int* begin, int* end) {
   int pivot = end[-1];
+#if defined(INDEXED_ALT1) || defined(INDEXED_ALT2)
   int* sides[2] = { begin, begin };
   for (; sides[1] < end - 1; ++sides[1]) {
-#if defined(INDEXED_ALT1) || defined(INDEXED_ALT2)
     sides[0] += swap_if(*sides[1] <= pivot, sides);
-#else
-    sides[0] += swap_if(*sides[1] <= pivot, *sides[0], *sides[1]);
-#endif
   }
   int tmp = *sides[0]; *sides[0] = end[-1], end[-1] = tmp;
   return sides[0];
+#else
+  int* left = begin;
+  for (int* right = begin; right < end - 1; ++right) {
+#if defined(BOG)
+    if (*right <= pivot) {
+      std::swap(*left, *right);
+      ++left;
+    }
+#else
+    left += swap_if(*right <= pivot, *left, *right);
+#endif
+  }
+  int tmp = *left; *left = end[-1], end[-1] = tmp;
+  return left;
+#endif
 }
 
 void quicksort(int* begin, int* end) {
