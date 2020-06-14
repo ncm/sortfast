@@ -27,7 +27,7 @@ Same input, same algorithm, varying performance:
      <tr><td rowspan=2> BOG  </td><td> G++ </td><td> 1.1 (11.5s) </td><td> 1.1  (8.2s) </td></tr>
      <tr><td>                        Clang </td><td> 1.1 (11.3s) </td><td> 1.1  (7.9s) </td></tr>
      <tr><td rowspan=2> &&|  </td><td> G++ </td><td> .56  (5.7s) </td><td>  .61 (4.5s) </td></tr>
-     <tr><td>                        Clang </td><td> <b> .49 (4.9s)</b> </td><td> <b> .47 (3.4s)</b> </td></tr>
+     <tr><td>                        Clang ! </td><td> <b> .49 (4.9s)</b> </td><td> <b> .47 (3.4s)</b> </td></tr>
      <tr><td rowspan=2> IX   </td><td> G++ </td><td>  .79 (8.1s) </td><td>  .89 (6.5s) </td></tr>
      <tr><td>                        Clang </td><td>  .66 (6.6s) </td><td>  .63 (4.6s) </td></tr>
      <tr><td rowspan=2> IX-P </td><td> G++ </td><td> 1.2 (12.0s) </td><td>  1.2 (8.4s) </td></tr>
@@ -35,8 +35,8 @@ Same input, same algorithm, varying performance:
      <tr><td rowspan=2> ROT  </td><td> G++ </td><td> .72  (7.3s) </td><td>  .7 (5.1s) </td></tr>
      <tr><td>                        Clang </td><td>  .68 (6.8s) </td><td>  .66 (4.8s) </td></tr>
      <tr><td rowspan=2> CMOV </td><td> G++ </td><td> 1.1 (11.3s) </td><td>  1.1 (8.0s) </td></tr>
-     <tr><td>                        Clang </td><td> <b> .49 (4.9s)</b></td><td><b> .47 (3.4</b> </td></tr>
-     <tr><td rowspan=2> IX1  </td><td> G++ </td><td> 1.6 (15.9s) ! </td><td> 1.6 (11.8s) ! </td></tr>
+     <tr><td>                        Clang ! </td><td> <b> .49 (4.9s)</b></td><td><b> .47 (3.4</b> </td></tr>
+     <tr><td rowspan=2> IX1  </td><td> G++ ! </td><td> 1.6 (15.9s) </td><td> 1.6 (11.8s) </td></tr>
      <tr><td>                        Clang </td><td>  .61 (6.1s) </td><td>  .62 (4.5s) </td></tr>
      <tr><td rowspan=2> IX2  </td><td> G++ </td><td> 1.1 (11.2s) </td><td>  1.1 (8.2s) </td></tr>
      <tr><td>                        Clang </td><td>  .69 (6.9s) </td><td> .7  (5.1s) </td></tr>
