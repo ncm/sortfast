@@ -45,6 +45,9 @@ Same input, same algorithm, varying performance:
    </tbody>
  </table>
 
+Note that compiler tunings for Zen2 are very immature, resulting in severely
+suboptimal code generation in several cases seen here.
+
  Radix sorts, for reference
  <table>
    <thead>
