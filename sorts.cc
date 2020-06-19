@@ -58,8 +58,8 @@ void sort_radix2(unsigned* begin, unsigned* end) {
     std::swap(a_buckets[1], b_buckets[1]), b_buckets[1].clear();
   }
 
-  for (unsigned v : a_buckets[0]) *begin++ = v;
-  for (unsigned v : a_buckets[1]) *begin++ = v;
+  for (auto& bucket : a_buckets)
+    for (unsigned v : bucket) *begin++ = v;
 }
 
 #elif defined(BOG)
@@ -137,31 +137,40 @@ inline bool swap_if(bool c, int* (&sides)[2]) {
 # define SORT quicksort
 # define TYPE int
 
+#if defined(BOG)
 int* partition(int* begin, int* end) {
   int pivot = end[-1];
-#if defined(INDEXED_ALT1) || defined(INDEXED_ALT2)
-  int* sides[2] = { begin, begin };
-  for (; sides[1] < end - 1; ++sides[1]) {
-    sides[0] += swap_if(*sides[1] <= pivot, sides);
-  }
-  int tmp = *sides[0]; *sides[0] = end[-1], end[-1] = tmp;
-  return sides[0];
-#else
   int* left = begin;
   for (int* right = begin; right < end - 1; ++right) {
-#if defined(BOG)
     if (*right <= pivot) {
       std::swap(*left, *right);
       ++left;
     }
-#else
-    left += swap_if(*right <= pivot, *left, *right);
-#endif
   }
-  int tmp = *left; *left = end[-1], end[-1] = tmp;
+  std::swap(*left, end[-1]);
   return left;
-#endif
 }
+#elif ! (defined(INDEXED_ALT1) || defined(INDEXED_ALT2))
+int* partition(int* begin, int* end) {
+  int pivot = end[-1];
+  int* left = begin;
+  for (int* right = begin; right < end - 1; ++right) {
+    left += swap_if(*right <= pivot, *left, *right);
+  }
+  std::swap(*left, end[-1]);
+  return left;
+}
+#else // defined(INDEXED_ALT1) || defined(INDEXED_ALT2)
+int* partition(int* begin, int* end) {
+  int pivot = end[-1];
+  int* sides[2] = { begin, begin };
+  for (; sides[1] < end - 1; ++sides[1]) {
+    sides[0] += swap_if(*sides[1] <= pivot, sides);
+  }
+  std::swap(*sides[0], end[-1]);
+  return sides[0];
+}
+#endif
 
 void quicksort(int* begin, int* end) {
   while (end - begin > 1) {

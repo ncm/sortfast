@@ -25,6 +25,6 @@ clean:; rm 1e8ints a.out
 1e8ints:; dd if=/dev/urandom of=1e8ints bs=1000000 count=400
 
 ${ALL} NONE: 1e8ints
-	@ CMD='${CC} -D${CHECK} -O3 -march=${ARCH} -D$@ sorts.cc && time ./a.out && echo ok'; \
-    echo "$$CMD"; bash -c "$$CMD"
+	@ CMD='${CC} -D${CHECK} -O3 -march=${ARCH} -D$@ sorts.cc && time ./a.out || echo FAIL'; \
+		echo "$$CMD"; bash -c "$$CMD"
 
