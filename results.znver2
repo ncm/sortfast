@@ -1,0 +1,134 @@
+$ make CC=clang++-10 ARCH=znver2
+clang++-10 -DNOCHECK -O3 -march=znver2 -DSTD sorts.cc && time ./a.out && echo ok
+
+real	0m8.972s
+user	0m8.460s
+sys	0m0.506s
+ok
+clang++-10 -DNOCHECK -O3 -march=znver2 -DRADIX256 sorts.cc && time ./a.out && echo ok
+
+real	0m1.805s
+user	0m1.804s
+sys	0m0.000s
+ok
+clang++-10 -DNOCHECK -O3 -march=znver2 -DRADIX2 sorts.cc && time ./a.out && echo ok
+
+real	0m11.783s
+user	0m11.734s
+sys	0m0.053s
+ok
+clang++-10 -DNOCHECK -O3 -march=znver2 -DBOG sorts.cc && time ./a.out && echo ok
+
+real	0m9.562s
+user	0m9.398s
+sys	0m0.168s
+ok
+clang++-10 -DNOCHECK -O3 -march=znver2 -DANDANDOR sorts.cc && time ./a.out && echo ok
+
+real	0m6.630s
+user	0m6.390s
+sys	0m0.244s
+ok
+clang++-10 -DNOCHECK -O3 -march=znver2 -DINDEXED sorts.cc && time ./a.out && echo ok
+
+real	0m7.597s
+user	0m7.405s
+sys	0m0.196s
+ok
+clang++-10 -DNOCHECK -O3 -march=znver2 -DINDEXED_PESSIMAL_ON_GCC sorts.cc && time ./a.out && echo ok
+
+real	0m7.616s
+user	0m7.365s
+sys	0m0.254s
+ok
+clang++-10 -DNOCHECK -O3 -march=znver2 -DROT sorts.cc && time ./a.out && echo ok
+
+real	0m6.843s
+user	0m6.588s
+sys	0m0.258s
+ok
+clang++-10 -DNOCHECK -O3 -march=znver2 -DCMOV sorts.cc && time ./a.out && echo ok
+
+real	0m6.576s
+user	0m6.339s
+sys	0m0.240s
+ok
+clang++-10 -DNOCHECK -O3 -march=znver2 -DINDEXED_ALT1 sorts.cc && time ./a.out && echo ok
+
+real	0m6.716s
+user	0m6.581s
+sys	0m0.137s
+ok
+clang++-10 -DNOCHECK -O3 -march=znver2 -DINDEXED_ALT2 sorts.cc && time ./a.out && echo ok
+
+real	0m19.216s
+user	0m18.937s
+sys	0m0.275s
+ok
+nico@nico:~/sortfast$ make CC=g++-10 ARCH=znver2
+g++-10 -DNOCHECK -O3 -march=znver2 -DSTD sorts.cc && time ./a.out && echo ok
+
+real	0m9.311s
+user	0m9.021s
+sys	0m0.285s
+ok
+g++-10 -DNOCHECK -O3 -march=znver2 -DRADIX256 sorts.cc && time ./a.out && echo ok
+
+real	0m2.175s
+user	0m1.795s
+sys	0m0.379s
+ok
+g++-10 -DNOCHECK -O3 -march=znver2 -DRADIX2 sorts.cc && time ./a.out && echo ok
+
+real	0m13.280s
+user	0m12.753s
+sys	0m0.520s
+ok
+g++-10 -DNOCHECK -O3 -march=znver2 -DBOG sorts.cc && time ./a.out && echo ok
+
+real	0m10.350s
+user	0m10.335s
+sys	0m0.021s
+ok
+g++-10 -DNOCHECK -O3 -march=znver2 -DANDANDOR sorts.cc && time ./a.out && echo ok
+
+real	0m7.385s
+user	0m7.375s
+sys	0m0.013s
+ok
+g++-10 -DNOCHECK -O3 -march=znver2 -DINDEXED sorts.cc && time ./a.out && echo ok
+
+real	0m8.467s
+user	0m8.471s
+sys	0m0.000s
+ok
+g++-10 -DNOCHECK -O3 -march=znver2 -DINDEXED_PESSIMAL_ON_GCC sorts.cc && time ./a.out && echo ok
+
+real	0m24.316s
+user	0m24.094s
+sys	0m0.233s
+ok
+g++-10 -DNOCHECK -O3 -march=znver2 -DROT sorts.cc && time ./a.out && echo ok
+
+real	0m6.801s
+user	0m6.596s
+sys	0m0.208s
+ok
+g++-10 -DNOCHECK -O3 -march=znver2 -DCMOV sorts.cc && time ./a.out && echo ok
+
+real	0m9.912s
+user	0m9.884s
+sys	0m0.032s
+ok
+g++-10 -DNOCHECK -O3 -march=znver2 -DINDEXED_ALT1 sorts.cc && time ./a.out && echo ok
+
+real	0m7.643s
+user	0m7.430s
+sys	0m0.216s
+ok
+g++-10 -DNOCHECK -O3 -march=znver2 -DINDEXED_ALT2 sorts.cc && time ./a.out && echo ok
+
+real	0m19.480s
+user	0m19.453s
+sys	0m0.021s
+ok
